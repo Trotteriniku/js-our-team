@@ -59,19 +59,27 @@ const rowEl =''
 // milestone2 
 
 
+stampData()
 
 function stampData() {
     const rowEl =document.querySelector('.row');
-
+    let pattern=''
     for (let i = 0; i < teaMembers.length; i++) {
+        pattern += ` <ul>
+                    <li>${ teaMembers[i].name}</li>
+                    <li>${ teaMembers[i].role}</li>
+                    <li><img src="img/${teaMembers[i].picture}" alt="fotina"></li>
+                    </ul>
         
-         rowEl.innerHTML=teaMembers[i].name
+        
+        `
+          
+        
+         
         //  console.log(teaMembers[i].name);
-
+        
     }
-    console.log(rowEl);
-
-    // return rowEl
+    rowEl.innerHTML= pattern
 }
 
 
