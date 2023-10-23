@@ -1,4 +1,6 @@
 'use strict'
+
+// creare l'array che contiene i dati (oggetti) dei membri
 const teaMembers = 
 [ 
     {
@@ -40,9 +42,19 @@ const teaMembers =
 
 ];
 
- console.log(teaMembers);
- 
-   
+// milestone 1= stampare i dati 
+for (let i = 0; i < teaMembers.length; i++) {
+    console.groupCollapsed(teaMembers[i].name)
+    console.log(teaMembers[i].name);
+    console.log(teaMembers[i].role);
+    console.log(teaMembers[i].picture);
+    console.groupEnd()
+    
+}
+
+
+
+
 
 
 
