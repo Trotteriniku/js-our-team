@@ -57,20 +57,21 @@ const rowEl =''
 
 
 // milestone2 
-
-
-stampData()
-
-function stampData() {
-    const rowEl =document.querySelector('.row');
+stampData(teaMembers)
+function stampData(teaMembers) {
+    const rowEl =document.getElementById('cardRow');
     let pattern=''
     for (let i = 0; i < teaMembers.length; i++) {
         pattern += ` 
-        <ul class="list-unstyled" >
-            <li>${ teaMembers[i].name}</li>
-            <li>${ teaMembers[i].role}</li>
-            <li><img src="img/${teaMembers[i].picture}" alt="fotina"></li>
-        </ul>
+        <div class="card text-center mb-5 p-0 w-25">
+            <img class="card-img-top " src="img/${teaMembers[i].picture}" alt="Title">
+            <div class="card-body">
+                <h4 class="card-title">${teaMembers[i].name}</h4>
+                <p class="card-text">
+                   ${teaMembers[i].role}
+                </p>
+            </div>
+        </div>
         `
     }
      rowEl.innerHTML= pattern
@@ -78,6 +79,28 @@ function stampData() {
 
 
 
+// pushare nuovo membro
+const btnSubmit=document.getElementById('inviaBtn')
+btnSubmit.addEventListener('click', ()=>{
+    const newMember =  {
+      name: document.getElementById('name').value,
+      role : document.getElementById('role').value,
+      picture: document.getElementById('picture').value
+    }
+  
+    teaMembers.push(newMember);
+    stampData(newMember);
+    resetdom();
+  });
+
+
+
+//   reset
+  function resetdom(){
+    document.getElementById('name').value = '';
+    document.getElementById('role').value = '';
+    document.getElementById('picture').value= '';
+}
 
 
 
