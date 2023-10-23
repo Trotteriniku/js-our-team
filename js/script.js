@@ -42,15 +42,38 @@ const teaMembers =
 
 ];
 
-// milestone 1= stampare i dati 
-for (let i = 0; i < teaMembers.length; i++) {
-    console.groupCollapsed(teaMembers[i].name)
-    console.log(teaMembers[i].name);
-    console.log(teaMembers[i].role);
-    console.log(teaMembers[i].picture);
-    console.groupEnd()
+
+const rowEl =''
+
+//  milestone 1= stampare i dati 
+ for (let i = 0; i < teaMembers.length; i++) {
+     console.groupCollapsed(teaMembers[i].name)
+     console.log(teaMembers[i].name);
+     console.log(teaMembers[i].role);
+     console.log(teaMembers[i].picture);
+     console.groupEnd()
     
+ }
+
+
+// milestone2 
+
+
+
+function stampData() {
+    const rowEl =document.querySelector('.row');
+
+    for (let i = 0; i < teaMembers.length; i++) {
+        
+         rowEl.innerHTML=teaMembers[i].name
+        //  console.log(teaMembers[i].name);
+
+    }
+    console.log(rowEl);
+
+    // return rowEl
 }
+
 
 
 
