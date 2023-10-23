@@ -65,21 +65,15 @@ function stampData() {
     const rowEl =document.querySelector('.row');
     let pattern=''
     for (let i = 0; i < teaMembers.length; i++) {
-        pattern += ` <ul>
-                    <li>${ teaMembers[i].name}</li>
-                    <li>${ teaMembers[i].role}</li>
-                    <li><img src="img/${teaMembers[i].picture}" alt="fotina"></li>
-                    </ul>
-        
-        
+        pattern += ` 
+        <ul class="list-unstyled" >
+            <li>${ teaMembers[i].name}</li>
+            <li>${ teaMembers[i].role}</li>
+            <li><img src="img/${teaMembers[i].picture}" alt="fotina"></li>
+        </ul>
         `
-          
-        
-         
-        //  console.log(teaMembers[i].name);
-        
     }
-    rowEl.innerHTML= pattern
+     rowEl.innerHTML= pattern
 }
 
 
